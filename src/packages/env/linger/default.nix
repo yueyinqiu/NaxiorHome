@@ -1,6 +1,4 @@
-{ pkgs, config, ... }:
-let
-in
+{ ... }:
 {
   systemd.user.services.enable-linger = {
     Unit = {

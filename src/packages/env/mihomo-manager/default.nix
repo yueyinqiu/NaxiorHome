@@ -27,7 +27,7 @@ in
     HTTPS_PROXY=proxy;
   };
 
-    systemd.user.services.switch-nix-daemon-proxy-if-needed = {
+  systemd.user.services.switch-nix-daemon-proxy-if-needed = {
     Unit = {
       Description = "Start nix-daemon-proxy-switchboard if not already running";
     };

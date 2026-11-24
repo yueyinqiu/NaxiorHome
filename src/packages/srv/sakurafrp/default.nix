@@ -1,0 +1,27 @@
+{ config, sakurafrp-frpc, ... }: {
+  my.packages.sakurafrp-frpc = sakurafrp-frpc;
+
+  xdg.configFile."sakurafrp-frpc/env.example".text = ''
+    FRPC_TOKEN="XXXXXX"
+  '';
+
+  systemd.user.services.sakurafrp-frpc = {
+    Unit = {
+      Description = "SakuraFrp frpc client";
+      After = [ "network-online.target" ];
+      Wants = [ "network-online.target" ];
+    };
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+    Service = {
+      EnvironmentFile = "${config.xdg.configHome}/sakurafrp-frpc/env";
+      ExecStart = [
+        "${config.my.packages.sakurafrp-frpc}/bin/frpc"
+        "-f"
+        "$FRPC_TOKEN"
+      ];
+      Restart = "on-failure";
+    };
+  };
+}

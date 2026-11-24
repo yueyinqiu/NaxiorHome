@@ -16,6 +16,7 @@
     home-manager-mihomo-manager.url = "github:MihomoManager/HomeManagerMihomoManager";
     home-manager-vscode-server-machine-settings.url = "github:yueyinqiu/HomeManagerVscodeServerMachineSettings";
     nix-airgap.url = "github:bitbloxhub/nix-airgap";
+    sakurafrp-frpc.url = "github:yueyinqiu/SakurafrpFrpcNix";
   };
 
   outputs = inputs: {
@@ -28,6 +29,7 @@
         extraSpecialArgs = {
           nixpak = inputs.nixpak;
           nix-airgap = inputs.nix-airgap.packages.${system};
+          sakurafrp-frpc = inputs.sakurafrp-frpc.packages.${system}.frpc;
         };
         modules = [
           inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager

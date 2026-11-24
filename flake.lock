@@ -618,7 +618,29 @@
         "nixpkgs": [
           "naxior",
           "nixpkgs"
+        ],
+        "sakurafrp-frpc": "sakurafrp-frpc"
+      }
+    },
+    "sakurafrp-frpc": {
+      "inputs": {
+        "nixpkgs": [
+          "naxior",
+          "nixpkgs"
         ]
+      },
+      "locked": {
+        "lastModified": 1793590953,
+        "narHash": "sha256-7wiZhKhS+BLkBmuw5Ii78bMfJmU+kn7rGl3RUjTB7nc=",
+        "owner": "yueyinqiu",
+        "repo": "SakurafrpFrpcNix",
+        "rev": "27e213fa582c15fc2c12429311548d46edea9c8d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yueyinqiu",
+        "repo": "SakurafrpFrpcNix",
+        "type": "github"
       }
     },
     "sub-nix": {
