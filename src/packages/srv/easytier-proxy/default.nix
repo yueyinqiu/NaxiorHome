@@ -4,7 +4,7 @@
   '';
   
   home-manager-mihomo-manager.instances.easytier-proxy = {
-    port = 16884;
+    port = 58657;
     configuration = ./proxy;
   };
 
