@@ -2,6 +2,12 @@
   xdg.configFile."easytier-proxy/env.example".text = ''
     ET_NETWORK_SECRET="XXXXXX"
   '';
+  
+  home-manager-mihomo-manager.instances.easytier-proxy = {
+    port = 16884;
+    configuration = ./proxy;
+  };
+
   systemd.user.services.easytier-naxior = {
     Unit = {
       Description = "EasyTier network for naxior";

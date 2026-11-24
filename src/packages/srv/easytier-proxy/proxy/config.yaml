@@ -1,0 +1,4 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '10.126.127.1'
+mode: direct
