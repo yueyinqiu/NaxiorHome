@@ -4,23 +4,11 @@ listeners = []
 tcp_whitelist = []
 udp_whitelist = []
 
-[[port_forward]]
-bind_addr = "127.0.0.1:25820"
-dst_addr = "10.126.127.1:7896"
-proto = "tcp"
-
-[[port_forward]]
-bind_addr = "127.0.0.1:45200"
-dst_addr = "10.126.127.1:59553"
-proto = "tcp"
-
 [network_identity]
 network_name = "8ee862a3-8146-470b-9dba-242bfbb85b51"
 
 [flags]
 no_tun = true
-use_smoltcp = true
-enable_quic_proxy = true
 
 # https://github.com/orgs/EasyTier/discussions/2429
 [[peer]]
