@@ -1,17 +1,21 @@
-{ pkgs, config, ... }:
+{ config, lib, pkgs, ... }:
 let
-  proxy = "http://127.0.0.1:25545/";
+  proxyPort = 25545;
+  proxy = "http://127.0.0.1:${toString proxyPort}/";
 
-  switch-nix-daemon-proxy-if-needed = pkgs.writeShellApplication {
-    name = "switch-nix-daemon-proxy-if-needed";
+  switchboardLogin = pkgs.writeShellApplication {
+    name = "nix-daemon-proxy-switchboard-login";
+    runtimeInputs = [ pkgs.coreutils ];
     text = ''
-        status="$(/run/current-system/sw/bin/nix-daemon-proxy-switchboard status --json)"
-        type="$(echo "$status" | ${pkgs.jq}/bin/jq -r '.Type')"
+      switcher=/run/current-system/sw/bin/nix-daemon-proxy-switchboard
+      port=${toString proxyPort}
 
-        if [ "$type" = "null" ]; then
-          exec /run/current-system/sw/bin/nix-daemon-proxy-switchboard http -H 127.0.0.1 -P 25545
-        fi
-      '';
+      status=$("$switcher" status 2>/dev/null)
+      first=$(printf '%s\n' "$status" | head -n1)
+      if [ "$first" = "Direct" ]; then
+        "$switcher" http -H 127.0.0.1 -P "$port"
+      fi
+    '';
   };
 in
 {
@@ -27,16 +31,7 @@ in
     HTTPS_PROXY=proxy;
   };
 
-  systemd.user.services.switch-nix-daemon-proxy-if-needed = {
-    Unit = {
-      Description = "Start nix-daemon-proxy-switchboard if not already running";
-    };
-    Service = {
-      Type = "oneshot";
-      ExecStart = "${switch-nix-daemon-proxy-if-needed}/bin/switch-nix-daemon-proxy-if-needed";
-    };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-  };
+  programs.bash.profileExtra = lib.mkAfter ''
+    ${switchboardLogin}/bin/nix-daemon-proxy-switchboard-login &>/dev/null || true
+  '';
 }
