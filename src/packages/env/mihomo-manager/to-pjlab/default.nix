@@ -6,7 +6,7 @@
 }:
 {
   home-manager-mihomo-manager.instances.to-pjlab = {
-    port = 44911;
+    port = 60017;
     configuration = ./config;
   };
 

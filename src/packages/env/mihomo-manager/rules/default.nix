@@ -1,7 +1,7 @@
 { ... }:
 {
   home-manager-mihomo-manager.instances.rules = {
-    port = 16884;
+    port = 25545;
     configuration = ./config;
   };
 }

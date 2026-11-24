@@ -1,6 +1,6 @@
 { ... }: {
   home-manager-mihomo-manager.instances.ye-sha-yun = {
-    port = 61068;
+    port = 47933;
     configuration = ./config;
   };
 }
