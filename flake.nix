@@ -16,6 +16,8 @@
 
     nixpak.url = "github:nixpak/nixpak";
     home-manager-mihomo-manager.url = "github:MihomoManager/HomeManagerMihomoManager";
+    home-manager-vscode-server-machine-settings.url = "github:yueyinqiu/HomeManagerVscodeServerMachineSettings";
+
     nix-airgap.url = "github:bitbloxhub/nix-airgap";
   };
 
@@ -32,6 +34,7 @@
         };
         modules = [
           inputs.home-manager-mihomo-manager.homeManagerModules.home-manager-mihomo-manager
+          inputs.home-manager-vscode-server-machine-settings.homeManagerModules.home-manager-vscode-server-machine-settings
           (inputs.import-tree ./src)
         ];
       };
