@@ -8,16 +8,13 @@
   inputs = {
     import-tree.url = "github:denful/import-tree";
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    naxior.url = "github:yueyinqiu/Naxior";
+    nixpkgs.follows = "naxior/nixpkgs";
 
+    home-manager.url = "github:nix-community/home-manager/master";
     nixpak.url = "github:nixpak/nixpak";
     home-manager-mihomo-manager.url = "github:MihomoManager/HomeManagerMihomoManager";
     home-manager-vscode-server-machine-settings.url = "github:yueyinqiu/HomeManagerVscodeServerMachineSettings";
-
     nix-airgap.url = "github:bitbloxhub/nix-airgap";
   };
 
