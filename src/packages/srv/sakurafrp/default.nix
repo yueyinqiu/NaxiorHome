@@ -21,7 +21,7 @@
         "--no_check_update"
         "--encrypt_dns"
         "--fetch_config"
-      ] + '' "$SAKURAFRP_ARGUMENT_FETCH_CONFIG"'';
+      ] + " $SAKURAFRP_ARGUMENT_FETCH_CONFIG";
       Restart = "on-failure";
     };
   };
