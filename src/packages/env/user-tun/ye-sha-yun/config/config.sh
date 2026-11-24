@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# "$MMMM" for the MihomoManager.MihomoMixin binary
+# "$OUTPUT_PATH" for writing the final merged configuration
+# "$TEMP_DIRECTORY" for temporary files (cleaned up after the service stops)
+# "$STATE_DIRECTORY" for persistent files (retained across runs)
+# "$HOME_MANAGER_MIHOMO_MANAGER_PROXIES" for the generated list of managed proxy instances
+# . for the instance's own configuration files
+
+if [ -z "$(find "$STATE_DIRECTORY/origin-ye-sha-yun.yaml" -mtime -30)" ]; then
+  url="$(tr -d '[:space:]' < source.txt)"
+  curl -L -H "User-Agent: flclash" \
+    --output "$STATE_DIRECTORY/origin-ye-sha-yun.yaml" \
+    "$url"
+fi
+
+"$MMMM" \
+  merge interface.yaml \
+  merge "$STATE_DIRECTORY/origin-ye-sha-yun.yaml" \
+  js to-global.js \
+  save "$OUTPUT_PATH"
