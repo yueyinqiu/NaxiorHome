@@ -18,9 +18,9 @@
       EnvironmentFile = "${config.xdg.configHome}/sakurafrp/env";
       ExecStart = lib.hm.strings.escapeSystemdExecArgs [
         "${config.my.packages.sakurafrp-frpc}/bin/frpc"
-        "--fetch_config"
         "--no_check_update"
         "--encrypt_dns"
+        "--fetch_config"
       ] + '' "$SAKURAFRP_ARGUMENT_FETCH_CONFIG"'';
       Restart = "on-failure";
     };
