@@ -10,9 +10,8 @@ let
       switcher=/run/current-system/sw/bin/nix-daemon-proxy-switchboard
       port=${toString proxyPort}
 
-      status=$("$switcher" status 2>/dev/null)
-      first=$(printf '%s\n' "$status" | head -n1)
-      if [ "$first" = "Direct" ]; then
+      first=$("$switcher" status 2>/dev/null | head -n1)
+      if [ "$first" = Direct ]; then
         "$switcher" http -H 127.0.0.1 -P "$port"
       fi
     '';
