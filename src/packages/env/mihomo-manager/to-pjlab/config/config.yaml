@@ -1,7 +1,5 @@
 mode: global
 
-interface-name: wlp2s0
-
 proxy-groups:
   - name: GLOBAL
     type: select

@@ -15,7 +15,6 @@ if [ -z "$(find "$STATE_DIRECTORY/origin-ye-sha-yun.yaml" -mtime -30)" ]; then
 fi
 
 "$MMMM" \
-  merge interface.yaml \
   merge "$STATE_DIRECTORY/origin-ye-sha-yun.yaml" \
   js to-global.js \
   save "$OUTPUT_PATH"

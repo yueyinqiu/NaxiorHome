@@ -13,7 +13,6 @@ for file in rules/*.yaml; do
 done
 
 "$MMMM" \
-  merge interface.yaml \
   merge "$HOME_MANAGER_MIHOMO_MANAGER_PROXIES" \
   "${rules[@]}" \
   edit final.yaml \
