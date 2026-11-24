@@ -19,10 +19,9 @@
       ExecStart = lib.hm.strings.escapeSystemdExecArgs [
         "${config.my.packages.sakurafrp-frpc}/bin/frpc"
         "--fetch_config"
-        "$SAKURAFRP_ARGUMENT_FETCH_CONFIG"
         "--no_check_update"
         "--encrypt_dns"
-      ];
+      ] + '' "$SAKURAFRP_ARGUMENT_FETCH_CONFIG"'';
       Restart = "on-failure";
     };
   };
