@@ -1,4 +1,4 @@
-{ config, sakurafrp-frpc, ... }: {
+{ config, sakurafrp-frpc, lib, ... }: {
   my.packages.sakurafrp-frpc = sakurafrp-frpc;
 
   xdg.configFile."sakurafrp-frpc/env.example".text = ''
@@ -16,7 +16,7 @@
     };
     Service = {
       EnvironmentFile = "${config.xdg.configHome}/sakurafrp-frpc/env";
-      ExecStart = [
+      ExecStart = lib.hm.strings.escapeSystemdExecArgs [
         "${config.my.packages.sakurafrp-frpc}/bin/frpc"
         "-f"
         "$FRPC_TOKEN"
