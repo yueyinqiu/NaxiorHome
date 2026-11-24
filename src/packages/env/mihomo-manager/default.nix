@@ -22,11 +22,11 @@ in
     Service = {
       Type = "oneshot";
       script = ''
-        status="$(${switchboard} status --json)"
+        status="$(/run/current-system/sw/bin/nix-daemon-proxy-switchboard status --json)"
         type="$(echo "$status" | ${pkgs.jq}/bin/jq -r '.Type')"
 
         if [ "$type" = "null" ]; then
-          exec ${switchboard} http -H 127.0.0.1 -P 25545
+          exec /run/current-system/sw/bin/nix-daemon-proxy-switchboard http -H 127.0.0.1 -P 25545
         fi
         '';
     };
