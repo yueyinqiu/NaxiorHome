@@ -5,10 +5,6 @@
     SAKURAFRP_ARGUMENT_FETCH_CONFIG="XXXXXX"
   '';
 
-  systemd.user.tmpfiles.rules = [
-    "d ${config.xdg.stateHome}/sakurafrp - - - -"
-  ];
-
   systemd.user.services.sakurafrp = {
     Unit = {
       Description = "SakuraFrp frpc client";
@@ -19,7 +15,8 @@
       WantedBy = [ "default.target" ];
     };
     Service = {
-      WorkingDirectory = "${config.xdg.stateHome}/sakurafrp";
+      RuntimeDirectory = "sakurafrp";
+      WorkingDirectory = "%t/sakurafrp";
       EnvironmentFile = "${config.xdg.configHome}/sakurafrp/env";
       ExecStart = lib.hm.strings.escapeSystemdExecArgs [
         "${config.my.packages.sakurafrp-frpc}/bin/frpc"
