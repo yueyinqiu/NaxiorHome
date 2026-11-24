@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 let
-  proxy = http://127.0.0.1:25545/;
+  proxy = "http://127.0.0.1:25545/";
 
   switch-nix-daemon-proxy-if-needed = pkgs.writeShellApplication {
     name = "switch-nix-daemon-proxy-if-needed";
