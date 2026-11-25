@@ -10,27 +10,30 @@ Rules:
     - DOMAIN,github.com,hmmm-ye-sha-yun
     - DOMAIN,api.github.com,hmmm-ye-sha-yun
     - DOMAIN,codeload.github.com,hmmm-ye-sha-yun
-    - DOMAIN,objects.githubusercontent.com,hmmm-ye-sha-yun
-    - DOMAIN,raw.githubusercontent.com,hmmm-ye-sha-yun
-    - DOMAIN,gist.githubusercontent.com,hmmm-ye-sha-yun
-    - DOMAIN,avatars.githubusercontent.com,hmmm-ye-sha-yun
-    - DOMAIN,user-images.githubusercontent.com,hmmm-ye-sha-yun
-    - DOMAIN,media.githubusercontent.com,hmmm-ye-sha-yun
+    - DOMAIN,github.githubassets.com,hmmm-ye-sha-yun
+    - DOMAIN,live.github.com,hmmm-ye-sha-yun
+    - DOMAIN,alive.github.com,hmmm-ye-sha-yun
+    - DOMAIN,collector.github.com,hmmm-ye-sha-yun
+    - DOMAIN-SUFFIX,githubusercontent.com,hmmm-ye-sha-yun
 
     # gitlab
     - DOMAIN,gitlab.com,hmmm-ye-sha-yun
     - DOMAIN,registry.gitlab.com,hmmm-ye-sha-yun
 
     # google
-    - DOMAIN,google.com,hmmm-ye-sha-yun
-    - DOMAIN,translate.google.com,hmmm-ye-sha-yun
-    - DOMAIN,www.google.com,hmmm-ye-sha-yun
     - DOMAIN,www.google.com.hk,hmmm-ye-sha-yun
+    - DOMAIN,gemini.gstatic.com,hmmm-ye-sha-yun
+    - DOMAIN,ajax.googleapis.com,hmmm-ye-sha-yun
+    - DOMAIN,www.googleapis.com,hmmm-ye-sha-yun
+    - DOMAIN,www.gstatic.cn,hmmm-ye-sha-yun
+    - DOMAIN-SUFFIX,google.com,hmmm-ye-sha-yun
+    - DOMAIN-SUFFIX,googleusercontent.com,hmmm-ye-sha-yun
 
     # nixos
     - DOMAIN,discourse.nixos.org,hmmm-ye-sha-yun
     - DOMAIN,cache.nixos.org,hmmm-ye-sha-yun
     - DOMAIN,channels.nixos.org,hmmm-ye-sha-yun
+    - DOMAIN,releases.nixos.org,hmmm-ye-sha-yun
 
     # visual studio code
     - DOMAIN-SUFFIX,vsassets.io,hmmm-ye-sha-yun
@@ -38,16 +41,90 @@ Rules:
     # web archive
     - DOMAIN,web.archive.org,hmmm-ye-sha-yun
     
-    - DOMAIN,www.reddit.com,hmmm-ye-sha-yun
-    - DOMAIN,github.githubassets.com,hmmm-ye-sha-yun
-    - DOMAIN,camo.githubusercontent.com,hmmm-ye-sha-yun
-    - DOMAIN,home-manager-options.extranix.com,hmmm-ye-sha-yun
-    - DOMAIN,ajax.googleapis.com,hmmm-ye-sha-yun
-    - DOMAIN,proxy.golang.org,hmmm-ye-sha-yun
-    - DOMAIN-SUFFIX,docker.io,hmmm-ye-sha-yun
+    # docker
     - DOMAIN,production.cloudfront.docker.com,hmmm-ye-sha-yun
-    - DOMAIN,client-update.steamstatic.com,hmmm-ye-sha-yun
+    - DOMAIN-SUFFIX,docker.io,hmmm-ye-sha-yun
+
+    # golang
+    - DOMAIN,proxy.golang.org,hmmm-ye-sha-yun
+
+    # steam
     - DOMAIN,api.steampowered.com,hmmm-ye-sha-yun
+    - DOMAIN,client-update.steamstatic.com,hmmm-ye-sha-yun
+    - DOMAIN,steamcommunity.com,hmmm-ye-sha-yun
+    - DOMAIN,store.steampowered.com,hmmm-ye-sha-yun
+    - DOMAIN,store.fastly.steamstatic.com,hmmm-ye-sha-yun
+
+    # overleaf
+    - DOMAIN,www.overleaf.com,hmmm-ye-sha-yun
+    - DOMAIN,complies.overleafusercontent.com,hmmm-ye-sha-yun
+
+    # bitwarden
+    - DOMAIN,vault.bitwarden.com,hmmm-ye-sha-yun
+    - DOMAIN,api.bitwarden.com,hmmm-ye-sha-yun
+
+    # proton
+    - DOMAIN,proton.me,hmmm-ye-sha-yun
+    - DOMAIN,account.proton.me,hmmm-ye-sha-yun
+    - DOMAIN,account-api.proton.me,hmmm-ye-sha-yun
+    - DOMAIN,mail.proton.me,hmmm-ye-sha-yun
+    - DOMAIN,authenticator.proton.me,hmmm-ye-sha-yun
+    
+    # neuralps
+    - DOMAIN,neurips.cc,hmmm-ye-sha-yun
+    
+    # linux do
+    - DOMAIN,linux.do,hmmm-ye-sha-yun
+    - DOMAIN,connect.linux.do,hmmm-ye-sha-yun
+
+    # reddit
+    - DOMAIN,www.reddit.com,hmmm-ye-sha-yun
+    - DOMAIN,alb.reddit.com,hmmm-ye-sha-yun
+    - DOMAIN,accounts.reddit.com,hmmm-ye-sha-yun
+    - DOMAIN,pi.reddit.com,hmmm-ye-sha-yun
+    - DOMAIN,w3-reporting.reddit.com,hmmm-ye-sha-yun
+
+    # gravatar
+    - DOMAIN,gravatar.com,hmmm-ye-sha-yun
+    - DOMAIN,s.gravatar.com,hmmm-ye-sha-yun
+    - DOMAIN,www.gravatar.com,hmmm-ye-sha-yun
+    - DOMAIN,en.gravatar.com,hmmm-ye-sha-yun
+
+    # grok
+    - DOMAIN,grok.com,hmmm-ye-sha-yun
+    - DOMAIN,cdn.grok.com,hmmm-ye-sha-yun
+    - DOMAIN,auth.grok.com,hmmm-ye-sha-yun
+    - DOMAIN,accounts.x.ai,hmmm-ye-sha-yun
+
+    # huggingface
+    - DOMAIN,huggingface.co,hmmm-ye-sha-yun
+
+    # instagram
+    - DOMAIN,instagram.com,hmmm-ye-sha-yun
+    - DOMAIN,www.instagram.com,hmmm-ye-sha-yun
+    - DOMAIN,accountscenter.instagram.com,hmmm-ye-sha-yun
+    - DOMAIN-SUFFIX,cdninstagram.com,hmmm-ye-sha-yun
+
+    # whatsapp
+    - DOMAIN,www.whatsapp.com,hmmm-ye-sha-yun
+    - DOMAIN,static.whatsapp.net,hmmm-ye-sha-yun
+    - DOMAIN,web.whatsapp.com,hmmm-ye-sha-yun
+
+    # x
+    - DOMAIN,x.com,hmmm-ye-sha-yun
+    - DOMAIN,api.x.com,hmmm-ye-sha-yun
+    - DOMAIN,jf.x.com,hmmm-ye-sha-yun
+
+    - DOMAIN,home-manager-options.extranix.com,hmmm-ye-sha-yun
+    - DOMAIN,www.facebook.com,hmmm-ye-sha-yun
+    - DOMAIN,www.apkmirror.com,hmmm-ye-sha-yun
+    - DOMAIN,app.box.com,hmmm-ye-sha-yun
+    - DOMAIN,account.matrix.org,hmmm-ye-sha-yun
+    - DOMAIN,sorryios.ai,hmmm-ye-sha-yun
+    - DOMAIN,stackoverflow.com,hmmm-ye-sha-yun
+    - DOMAIN,www.virustotal.com,hmmm-ye-sha-yun
+    - DOMAIN,abs.twimg.com,hmmm-ye-sha-yun
+    - DOMAIN,challenges.cloudflare.com,hmmm-ye-sha-yun
   Delete: []
   Append: []
 Proxies:
