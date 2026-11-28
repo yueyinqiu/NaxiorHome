@@ -125,6 +125,7 @@ Rules:
     - DOMAIN,www.virustotal.com,hmmm-ye-sha-yun
     - DOMAIN,abs.twimg.com,hmmm-ye-sha-yun
     - DOMAIN,challenges.cloudflare.com,hmmm-ye-sha-yun
+    - DOMAIN,cache.nixos-cuda.org,hmmm-ye-sha-yun
   Delete: []
   Append: []
 Proxies:
